@@ -87,6 +87,7 @@
 		"syncstream": "cpp",
 		"expected": "cpp",
 		"spanstream": "cpp",
-		"stacktrace": "cpp"
+		"stacktrace": "cpp",
+		"phonebook.h": "c"
 	}
 }
