@@ -1,5 +1,5 @@
 CPP = c++
-CPPFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
+CPPFLAGS = -g3 -Wall -Wextra -Werror -MMD -MP -std=c++98
 NAME = myAwesomePhoneBook
 
 OBJ_DIR = ./obj
@@ -8,6 +8,7 @@ SRC_DIR = ./
 SRC =							\
 	$(SRC_DIR)/main.cpp			\
 	$(SRC_DIR)/PhoneBook.cpp	\
+	$(SRC_DIR)/Contact.cpp		\
 
 OBJ = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEP = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)

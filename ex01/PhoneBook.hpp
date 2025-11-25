@@ -2,16 +2,18 @@
 #define PHONEBOOK_H
 
 #include "Contact.hpp"
+#include <iostream>
 
 class PhoneBook {
 	public:
-	int		contactMax;
-	int		contactId;
-	Contact contact[8];
-	Contact addContact();
+		void	welcomeMessage();
+		void	addContact(int contactCurrent);
+		void	searchContact();;
 
 	private:
-	
+		Contact contact[8];
+		void	printPhoneBook();
+		void	printContact(Contact contact);
 };
 
 #endif
