@@ -1,5 +1,5 @@
 CPP = c++
-CPPFLAGS = -g3 -Wall -Wextra -Werror -MMD -MP -std=c++98
+CPPFLAGS = -g3 -MMD -MP -std=c++98
 NAME = theJobOfYourDreams
 
 OBJ_DIR = ./obj
