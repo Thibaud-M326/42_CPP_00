@@ -20,7 +20,7 @@ void	PhoneBook::addContact(int contactCurrent) {
 }
 
 std::string		PhoneBook::trimAndAddDot(std::string str) {
-	if (str.size() > 9) {
+	if (str.length() > 9) {
 		str.resize(9);
 		str.append(".");
 	}
@@ -56,7 +56,7 @@ void	PhoneBook::printPhoneBook() {
 	int i;
 
 	i = 0;
-	while (i < 8 && !this->contact[i].getFirstName().empty()) {
+	while (i < MAX_CONTACT && !this->contact[i].getFirstName().empty()) {
 		printContact(this->contact[i]);
 		i++;
 	}
@@ -77,7 +77,7 @@ void	PhoneBook::printEmptyPhoneBook() {
 std::string	PhoneBook::userInputLoop() {
 	std::string userInput;
 
-	while (userInput.empty() && !std::cin.eof()) {
+	while (userInput.empty() && !std::cin.fail()) {
 		std::cout << "Please enter the ID to display" << std::endl;
 		std::cout << "-> ";
 		getline(std::cin, userInput);
@@ -92,18 +92,23 @@ int		PhoneBook::askUserForIdToDisplay() {
 
 	userInputValid = 0;
 	index = 0;
-	while (userInputValid != 1) {
+	while (userInputValid != 1 && !std::cin.fail()) {
 		idToDisplay = userInputLoop();
-		if (idToDisplay.size() != 1) {
-			std::cout << "Error: Must be a digit [0 - 9]" << std::endl;
+		if (std::cin.fail())
+			break;
+		if (idToDisplay.size() != 1) 
+		{
+			std::cout << "Error: Must be a digit [1 - " << MAX_CONTACT << "]" << std::endl;
 			continue;
 		}
-		if (!(idToDisplay[0] >= '1' && idToDisplay[0] <= '8')) {
-			std::cout << "Error: Must be a digit [1 - 8]" << std::endl;
+		if (!(idToDisplay[0] >= '1' && idToDisplay[0] <= MAX_CONTACT + '0'))
+		{
+			std::cout << "Error: Must be a digit [1 - " << MAX_CONTACT << "]" << std::endl;
 			continue;
 		}
 		index = ((int)idToDisplay[0] - '0') - 1;
-		if (this->contact[index].getFirstName().empty()) {
+		if (this->contact[index].getFirstName().empty() && !std::cin.fail()) 
+		{
 			std::cout << "Error: No user at ID : " << idToDisplay << std::endl;
 			continue;
 		}
@@ -133,7 +138,8 @@ void	PhoneBook::searchContact() {
 		printHeader();
 		printPhoneBook();
 		idToDisplay = askUserForIdToDisplay();
-		displayId(idToDisplay);
+		if (!std::cin.fail())
+			displayId(idToDisplay);
 	}
 	else
 		printEmptyPhoneBook();

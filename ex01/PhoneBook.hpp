@@ -4,6 +4,8 @@
 #include "Contact.hpp"
 #include <iostream>
 
+#define MAX_CONTACT 2
+
 class PhoneBook {
 	public:
 		void	welcomeMessage();
@@ -11,7 +13,7 @@ class PhoneBook {
 		void	searchContact();;
 
 	private:
-		Contact 	contact[8];
+		Contact 	contact[MAX_CONTACT];
 		void		printPhoneBook();
 		void		printContact(Contact contact);
 		bool		emptyPhoneBook();

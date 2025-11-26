@@ -34,7 +34,7 @@ std::string	Contact::getDarkSecret() {
 void 		Contact::readFirstName() {
 	std::string firstName;
 
-	while (firstName.empty() && !std::cin.eof())
+	while (firstName.empty() && !std::cin.fail())
 	{
 		std::cout << "contact first name : ";
 		getline(std::cin, firstName);
@@ -45,7 +45,7 @@ void 		Contact::readFirstName() {
 void Contact::readLastName() {
 	std::string lastName;
 
-	while (lastName.empty() && !std::cin.eof())
+	while (lastName.empty() && !std::cin.fail())
 	{
 		std::cout << "contact last name : ";
 		getline(std::cin, lastName);
@@ -56,7 +56,7 @@ void Contact::readLastName() {
 void Contact::readNickName() {
 	std::string nickName;
 
-	while (nickName.empty() && !std::cin.eof())
+	while (nickName.empty() && !std::cin.fail())
 	{
 		std::cout << "contact nickname : ";
 		getline(std::cin, nickName);
@@ -67,7 +67,7 @@ void Contact::readNickName() {
 void Contact::readPhoneNumber() {
 	std::string phoneNumber;
 
-	while (phoneNumber.empty() && !std::cin.eof())
+	while (phoneNumber.empty() && !std::cin.fail())
 	{
 		std::cout << "contact phone number : ";
 		getline(std::cin, phoneNumber);
@@ -78,7 +78,7 @@ void Contact::readPhoneNumber() {
 void Contact::readDarkSecret() {
 	std::string darkSecret;
 
-	while (darkSecret.empty() && !std::cin.eof())
+	while (darkSecret.empty() && !std::cin.fail())
 	{
 		std::cout << "contact dark secret : ";
 		getline(std::cin, darkSecret);
