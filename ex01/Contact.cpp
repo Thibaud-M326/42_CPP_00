@@ -27,6 +27,10 @@ std::string	Contact::getPhoneNumber() {
 	return (this->phoneNumber);
 }
 
+std::string	Contact::getDarkSecret() {
+	return (this->darkSecret);
+}
+
 void 		Contact::readFirstName() {
 	std::string firstName;
 

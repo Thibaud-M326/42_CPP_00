@@ -11,9 +11,16 @@ class PhoneBook {
 		void	searchContact();;
 
 	private:
-		Contact contact[8];
-		void	printPhoneBook();
-		void	printContact(Contact contact);
+		Contact 	contact[8];
+		void		printPhoneBook();
+		void		printContact(Contact contact);
+		bool		emptyPhoneBook();
+		void		printEmptyPhoneBook();
+		std::string trimAndAddDot(std::string str);
+		void		printHeader();
+		int			askUserForIdToDisplay();
+		std::string	userInputLoop();
+		void		displayId(int id);
 };
 
 #endif
