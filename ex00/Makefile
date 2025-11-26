@@ -5,8 +5,6 @@ NAME = megaphone
 OBJ_DIR = ./obj
 SRC_DIR = ./
 
-yo
-
 SRC =							\
 	$(SRC_DIR)/megaphone.cpp	\
 
