@@ -2,7 +2,7 @@ CPP = c++
 CPPFLAGS = -g3 -Wall -Wextra -Werror -MMD -MP -std=c++98
 NAME = myAwesomePhoneBook
 
-OBJ_DIR = ./obj
+OBJ_DIR = ./.obj
 SRC_DIR = ./
 
 SRC =							\

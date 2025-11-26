@@ -2,7 +2,7 @@ CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 NAME = megaphone
 
-OBJ_DIR = ./obj
+OBJ_DIR = ./.obj
 SRC_DIR = ./
 
 SRC =							\
